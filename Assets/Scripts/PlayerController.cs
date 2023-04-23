@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 
 {
 
+public GameoverController gameoverController;
 public ScoreController scoreController;
 public Animator animator;
 public float speed;
@@ -129,16 +130,10 @@ private void OnTriggerEnter2D(Collider2D other)
  {
     if (other.gameObject.CompareTag("Death"))
     {
-      animator.SetTrigger("Death");
+      PlayerDeath();
     }
 }
 
-//Restart After Death
-public void Restartlevel()
-{
-  SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);  
-  Debug.Log("Level restarted");
-}
 
 //Key Pickup
     public void PickUpKey()
@@ -149,11 +144,15 @@ public void Restartlevel()
 
     public void KillPlayer()
     {
-        animator.SetTrigger("Death");
         Debug.Log("Player killed by enemy");
-        Restartlevel();
+        gameoverController.PlayerDied();
+        this.enabled = false;
     }
 
+public void PlayerDeath()
+{
+ animator.SetTrigger("Death");
+}
 
 }
 
