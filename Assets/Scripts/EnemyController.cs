@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-  
-  public GameObject pointA;
+   public GameObject pointA;
   public GameObject pointB;
   private Rigidbody2D rb2d;
   private Animator anim;
@@ -79,15 +78,13 @@ private void OnDrawGizmos()
              PlayerHealth.health--;
              if (PlayerHealth.health <= 0)
            {
-            playerController.KillPlayer();
+             playerController.PlayerDeath();
             }
             else
             {
 
             }
                
-             //  playerController.KillPlayer();
-             // Destroy (gameObject);
         }
     }
 }
