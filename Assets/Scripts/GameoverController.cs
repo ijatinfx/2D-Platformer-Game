@@ -22,8 +22,10 @@ public class GameoverController : MonoBehaviour
 //Restart After Death
 public void Restartlevel()
 {
-  SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);  
-  Debug.Log("Level restarted");
+  Debug.Log("Level restarted...");
+  Scene scene= SceneManager.GetActiveScene();
+  SceneManager.LoadScene(scene.buildIndex);  
+ 
 }
 
 
