@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,6 +5,7 @@ using UnityEngine.UI;
 public class GameoverController : MonoBehaviour
 {
    public Button buttonRestart;
+
 
     private void Awake() 
     {
@@ -27,6 +26,8 @@ public void Restartlevel()
   SceneManager.LoadScene(scene.buildIndex);  
  
 }
+
+ 
 
 
 }
